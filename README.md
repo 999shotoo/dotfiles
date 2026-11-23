@@ -65,6 +65,3 @@ To load the Brave theme, close Brave and run this from the repo root.
 
 Keep the Brave theme directory in place while it’s active. Git ignores the theme pack Brave generates.
 
-## Credits
-
-README layout inspired by [advtszn/dotfiles](https://github.com/advtszn/dotfiles). Warm Charcoal is based on the editor palette used in this setup.
