@@ -17,3 +17,14 @@ bin/
 obj/
 
 /brave/Cached Theme.pak
+
+# Keep local app data and credentials out of config commits
+credentials*.json
+secrets*.json
+auth.json
+webhook*.txt
+Local State
+Secure Preferences
+Login Data*
+Cookies*
+Network/Cookies*
