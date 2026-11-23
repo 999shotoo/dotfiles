@@ -10,13 +10,6 @@
   "border_offset": 0,
   "border_implementation": "Windows",
   "border_style":"System",
-  "border_color": {
-    "single": "#680973",
-    "stack": "#090B73",
-    "floating": "#09736E",
-    "monocle": "#660002",
-    "unfocused" : "#00F280"
-  },
 "mouse_follows_focus": false,
 "transparency": true,
 "transparency_alpha": 220,
@@ -31,10 +24,35 @@
 },
 
   "theme": {
-    "palette": "Base16",
-    "name": "Ashes",
+    "palette": "Custom",
+    "colours": {
+      "base_00": "#262626",
+      "base_01": "#393633",
+      "base_02": "#49433B",
+      "base_03": "#49423A",
+      "base_04": "#AAA08C",
+      "base_05": "#D8C9A5",
+      "base_06": "#E5D6B5",
+      "base_07": "#F1E6CD",
+      "base_08": "#C47788",
+      "base_09": "#D2AE71",
+      "base_0a": "#E9CC91",
+      "base_0b": "#A8A34B",
+      "base_0c": "#87B8AD",
+      "base_0d": "#8EA9C6",
+      "base_0e": "#BA95BB",
+      "base_0f": "#E3A1AD"
+    },
+    "bar_accent": "Base0B",
+    "single_border": "Base0B",
+    "stack_border": "Base0C",
+    "floating_border": "Base09",
+    "monocle_border": "Base0E",
     "unfocused_border": "Base03",
-    "bar_accent": "Base0D"
+    "unfocused_locked_border": "Base08",
+    "stackbar_background": "Base01",
+    "stackbar_focused_text": "Base05",
+    "stackbar_unfocused_text": "Base04"
   },
   "stackbar":{
     "height": 24,

@@ -1,11 +1,30 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.37/schema.bar.json",
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.bar.json",
   "monitor": 0,
   "font_family": "JetBrains Mono",
   "theme": {
-    "palette": "Base16",
-    "name": "Ashes",
-    "accent": "Base0D"
+    "palette": "Custom",
+    "colours": {
+      "base_00": "#262626",
+      "base_01": "#393633",
+      "base_02": "#49433B",
+      "base_03": "#49423A",
+      "base_04": "#AAA08C",
+      "base_05": "#D8C9A5",
+      "base_06": "#E5D6B5",
+      "base_07": "#F1E6CD",
+      "base_08": "#C47788",
+      "base_09": "#D2AE71",
+      "base_0a": "#E9CC91",
+      "base_0b": "#A8A34B",
+      "base_0c": "#87B8AD",
+      "base_0d": "#8EA9C6",
+      "base_0e": "#BA95BB",
+      "base_0f": "#E3A1AD"
+    },
+    "accent": "Base0B",
+    "auto_select_fill": "Base02",
+    "auto_select_text": "Base05"
   },
   "left_widgets": [
     {
