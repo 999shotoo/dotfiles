@@ -15,3 +15,5 @@ yasb_colors.css
 systray_state_*.json
 bin/
 obj/
+
+/brave/Cached Theme.pak

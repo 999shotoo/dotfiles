@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "YASB Warm Charcoal",
+  "description": "Charcoal surfaces, cream text, and olive accents.",
+  "version": "1.0.0",
+  "theme": {
+    "colors": {
+      "frame": [38, 38, 38],
+      "frame_inactive": [46, 43, 40],
+      "toolbar": [57, 54, 51],
+      "tab_background_text": [170, 160, 140],
+      "tab_text": [216, 201, 165],
+      "bookmark_text": [216, 201, 165],
+      "button_background": [73, 67, 59],
+      "omnibox_background": [38, 38, 38],
+      "omnibox_text": [216, 201, 165],
+      "ntp_background": [38, 38, 38],
+      "ntp_text": [216, 201, 165],
+      "ntp_link": [168, 163, 75]
+    },
+    "properties": {
+      "ntp_logo_alternate": 1
+    }
+  }
+}

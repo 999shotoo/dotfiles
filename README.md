@@ -13,6 +13,7 @@ My Windows desktop setup with an adaptive YASB bar, a shared Warm Charcoal palet
 | PowerShell | [shell/powershell/](shell/powershell/) | The matching PowerShell or WindowsPowerShell folder under Documents |
 | Fastfetch | [shell/fastfetch/](shell/fastfetch/) | %USERPROFILE%/.config/fastfetch/ |
 | Git | [git/](git/) | Merge the example into ~/.gitconfig and copy ignore into ~/.config/git/ |
+| Brave | [brave/](brave/) | Warm Charcoal browser theme |
 | Windows theme | [theme/](theme/) | Apply the .theme file from a local copy after setting its wallpaper |
 
 ## Restore a config
@@ -46,9 +47,14 @@ The shared [CSS tokens](theme/palette.css) are ready to copy into another projec
 | Accent | #A8A34B |
 | Destructive action | #C47788 |
 
-## Optional configs
+## Brave theme
 
-- [Komorebi and WHKD](extras/komorebi/) includes window rules, a bar config, and shortcut definitions.
-- [Tacky Borders](extras/tacky-borders/) contains the window border settings.
-- [Hyprland](extras/hyprland/) contains the existing Linux config.
-- [Editor Sidebar](extras/editor-sidebar/) contains the shelved WPF sidebar source. It builds with the .NET 10 SDK and has no startup registration in this repo.
+Warm Charcoal is a local browser theme from the brave folder. To restore it, run this from the repo root after closing Brave.
+
+    & "$env:ProgramFiles/BraveSoftware/Brave-Browser/Application/brave.exe" "--load-extension=$((Resolve-Path ./brave).Path)"
+
+Brave writes its local theme cache beside the manifest. Keep the theme directory in place while the theme is active.
+
+## Komorebi
+
+[Komorebi and WHKD](komorebi/) includes window rules, a bar config, and shortcut definitions.
