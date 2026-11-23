@@ -1,0 +1,17 @@
+# Local overrides, credentials, and tooling output
+.env
+.env.*
+*.local
+*.local.*
+*.key
+*.pem
+*.pfx
+*.log
+*.tmp
+*.backup
+*.bak
+settings.pre-*.json
+yasb_colors.css
+systray_state_*.json
+bin/
+obj/

@@ -1,0 +1,19 @@
+[Theme]
+DisplayName=YASB Warm Charcoal
+
+[Control Panel\Desktop]
+Wallpaper=__WALLPAPER__
+TileWallpaper=0
+WallpaperStyle=10
+
+[VisualStyles]
+Path=%SystemRoot%\Resources\Themes\Aero\Aero.msstyles
+ColorStyle=NormalColor
+Size=NormalSize
+AutoColorization=0
+ColorizationColor=0XC4A8A34B
+SystemMode=Dark
+AppMode=Dark
+
+[MasterThemeSelector]
+MTSM=RJSPBS

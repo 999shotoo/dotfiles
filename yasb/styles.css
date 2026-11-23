@@ -1,0 +1,590 @@
+:root {
+    --bar: #262626;
+    --surface: #393633;
+    --hover: #49433b;
+    --line: #49423a;
+    --text: #d8c9a5;
+    --muted: #aaa08c;
+    --active: #a8a34b;
+    --rose: #c47788;
+}
+
+* {
+    font-family: "Segoe UI Variable", "Segoe UI";
+    font-size: 12px;
+    color: var(--text);
+}
+
+.yasb-bar {
+    background-color: var(--bar);
+}
+
+.yasb-bar.adaptive {
+    -qproperty-railheight: 4;
+    -qproperty-islands: true;
+    -qproperty-islandradius: 13;
+    -qproperty-grouppadding: 10;
+    -qproperty-edgeradius: 0;
+}
+
+.yasb-bar .container-left {
+    padding-left: 8px;
+}
+
+.yasb-bar .container-right {
+    padding-right: 8px;
+}
+
+.yasb-bar .widget {
+    padding: 0 5px;
+}
+
+.yasb-bar .widget .label {
+    padding: 2px 5px;
+}
+
+.icon,
+.power-menu-widget .label {
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    font-size: 15px;
+}
+
+.power-menu-widget .label {
+    color: var(--rose);
+}
+
+.yasb-bar .clock-widget .label {
+    font-weight: 600;
+}
+
+.yasb-bar .notification-widget .label {
+    color: var(--muted);
+    font-family: "Cascadia Mono", "Consolas";
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 4px;
+    margin: 8px 0;
+    border-radius: 5px;
+}
+
+.yasb-bar .notification-widget .icon {
+    color: var(--muted);
+    font-size: 14px;
+    padding-right: 3px;
+}
+
+.yasb-bar .notification-widget .icon.new-notification {
+    color: var(--text);
+}
+
+.yasb-bar .notification-widget .label.new-notification {
+    background-color: #403e2b;
+    color: var(--active);
+}
+
+.yasb-bar .wallpapers-widget,
+.yasb-bar .window-switcher-widget {
+    padding: 0 4px;
+}
+
+.yasb-bar .wallpapers-widget .widget-container,
+.yasb-bar .window-switcher-widget .widget-container {
+    background-color: transparent;
+    border-radius: 7px;
+    margin: 5px 0;
+    padding: 0 5px;
+    transition: background 100ms ease-out;
+}
+
+.yasb-bar .wallpapers-widget .widget-container:hover,
+.yasb-bar .window-switcher-widget .widget-container:hover {
+    background-color: var(--hover);
+}
+
+.yasb-bar .wallpapers-widget .icon {
+    color: var(--active);
+}
+
+.yasb-bar .window-switcher-widget .icon {
+    color: var(--muted);
+}
+
+.window-switcher-popup {
+    background-color: var(--bar);
+    border: 1px solid #62574a;
+    border-radius: 13px;
+    padding: 10px;
+}
+
+.window-switcher-popup .item {
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    margin: 3px;
+    padding: 7px;
+}
+
+.window-switcher-popup .item.active {
+    background-color: #403e2b;
+    border-color: var(--active);
+}
+
+.window-switcher-popup .item-title,
+.window-switcher-popup .title {
+    font-weight: 600;
+}
+
+.window-switcher-popup .title {
+    color: var(--muted);
+    padding: 6px 8px 0;
+}
+
+.yasb-bar .network-status {
+    padding: 0 3px;
+}
+
+.yasb-bar .network-status .widget-container {
+    background-color: transparent;
+    border-radius: 7px;
+    margin: 5px 0;
+    padding: 0 5px;
+    transition: background 100ms ease-out;
+}
+
+.yasb-bar .network-status .widget-container:hover {
+    background-color: var(--hover);
+}
+
+.yasb-bar .network-status .label {
+    color: var(--active);
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    font-size: 15px;
+    padding: 0;
+}
+
+.yasb-bar .network-status .label.alt {
+    color: var(--muted);
+    font-family: "Segoe UI Variable", "Segoe UI";
+    font-size: 12px;
+}
+
+.yasb-bar .systray {
+    padding: 0 4px;
+}
+
+.systray .unpinned-visibility-btn {
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    font-size: 11px;
+    min-width: 24px;
+    min-height: 24px;
+    background-color: var(--surface);
+    color: var(--muted);
+    border: 0;
+    border-radius: 8px;
+    transition: background 100ms ease-out;
+}
+
+.systray .unpinned-visibility-btn:checked,
+.systray .unpinned-visibility-btn:hover {
+    background-color: var(--hover);
+    color: var(--text);
+}
+
+.systray-popup {
+    background-color: var(--bar);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.systray-popup .button,
+.systray .button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 7px;
+    padding: 3px;
+    transition: background 100ms ease-out;
+}
+
+.systray-popup .button {
+    padding: 9px;
+}
+
+.systray-popup .button:hover,
+.systray .button:hover {
+    background-color: var(--hover);
+}
+
+.ws-btn {
+    background-color: var(--hover);
+    border: none;
+    border-radius: 4px;
+    min-width: 8px;
+    max-width: 8px;
+    min-height: 8px;
+    max-height: 8px;
+    padding: 0;
+    margin: 0 3px;
+}
+
+.ws-btn.populated {
+    background-color: var(--muted);
+}
+
+.ws-btn.active {
+    background-color: var(--active);
+    min-width: 16px;
+    max-width: 16px;
+}
+
+.yasb-bar .taskbar-widget {
+    padding: 0 3px;
+}
+
+.taskbar-widget .app-container {
+    margin: 3px 2px;
+    padding: 2px 6px;
+    border-radius: 7px;
+}
+
+.taskbar-widget .app-container:hover {
+    background-color: var(--hover);
+}
+
+.taskbar-widget .app-container.foreground {
+    background-color: var(--surface);
+    border-bottom: 2px solid var(--active);
+}
+
+.tooltip,
+.context-menu,
+.taskbar-preview,
+.clock-popup.calendar,
+.audio-menu,
+.notification-menu,
+.quick-launch-popup {
+    background-color: var(--bar);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+}
+
+.tooltip {
+    padding: 5px 9px;
+}
+
+.context-menu {
+    padding: 5px;
+}
+
+.context-menu::item:selected {
+    background-color: var(--hover);
+    border-radius: 5px;
+}
+
+.clock-popup.calendar,
+.audio-menu {
+    padding: 10px;
+}
+
+.clock-popup.calendar .calendar-table {
+    background-color: var(--bar);
+    border: none;
+}
+
+.clock-popup.calendar .calendar-table::item:selected {
+    background-color: var(--active);
+    color: var(--bar);
+    border-radius: 5px;
+}
+
+.clock-popup.calendar .day-label {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.clock-popup.calendar .month-label,
+.clock-popup.calendar .year-label {
+    color: var(--muted);
+}
+
+.audio-menu .header {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    background-color: var(--surface);
+    padding: 7px 9px;
+    border-radius: 7px;
+}
+
+.notification-menu {
+    background-color: #242321;
+    border: 1px solid #595147;
+    border-radius: 12px;
+    min-width: 360px;
+    max-width: 360px;
+    max-height: 480px;
+}
+
+.notification-menu .header {
+    background-color: transparent;
+    padding: 12px 13px 10px;
+    border-bottom: 1px solid var(--line);
+}
+
+.notification-menu .header .title {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.notification-menu .header .dnd,
+.notification-menu .header .clear-all,
+.notification-menu .contents .clear-app,
+.notification-menu .contents .dismiss {
+    border: 0;
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--muted);
+    padding: 5px 8px;
+    margin-left: 3px;
+}
+
+.notification-menu .header .dnd:hover,
+.notification-menu .header .clear-all:hover,
+.notification-menu .contents .clear-app:hover,
+.notification-menu .contents .dismiss:hover {
+    background-color: var(--surface);
+    color: var(--text);
+}
+
+.notification-menu .header .dnd,
+.notification-menu .contents .dismiss {
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+}
+
+.notification-menu .header .dnd.active {
+    background-color: #403e2b;
+    color: var(--active);
+}
+
+.notification-menu .contents {
+    background: transparent;
+    padding: 7px 0;
+}
+
+.notification-menu .contents .section {
+    margin-bottom: 6px;
+}
+
+.notification-menu .contents .section-header {
+    padding: 5px 6px;
+    margin: 0 10px;
+}
+
+.notification-menu .contents .section-header .name,
+.notification-menu .contents .item .title {
+    font-weight: 600;
+}
+
+.notification-menu .contents .section-header .name {
+    color: var(--muted);
+    font-size: 11px;
+    padding-left: 5px;
+}
+
+.notification-menu .contents .item {
+    background-color: #302d29;
+    border: 0;
+    border-radius: 9px;
+    padding: 9px 10px;
+    margin: 0 10px 6px;
+}
+
+.notification-menu .contents .item:hover {
+    background-color: var(--hover);
+}
+
+.notification-menu .contents .item .time,
+.notification-menu .contents .item .attribution {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.notification-menu .contents .item .body {
+    color: var(--text);
+    padding-top: 3px;
+}
+
+.notification-menu .contents .empty {
+    padding: 16px 8px;
+}
+
+.notification-menu .contents .empty .icon {
+    color: var(--active);
+    font-size: 23px;
+    padding-bottom: 7px;
+}
+
+.notification-menu .contents .empty .text {
+    color: var(--muted);
+}
+
+.notification-menu .contents .empty .link,
+.notification-menu .contents .more {
+    color: var(--active);
+    padding: 5px 8px;
+}
+
+.notification-menu .footer {
+    border-top: 1px solid var(--line);
+    padding: 6px 10px;
+}
+
+.notification-menu .footer .label {
+    color: var(--muted);
+    border-radius: 6px;
+    padding: 5px 7px;
+}
+
+.notification-menu .footer .label:hover {
+    color: var(--text);
+    background-color: var(--surface);
+}
+
+.power-menu-compact {
+    background-color: var(--bar);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    min-width: 156px;
+    padding: 6px;
+}
+
+.power-menu-compact .button {
+    background-color: transparent;
+    border-radius: 7px;
+    min-height: 30px;
+    padding: 2px 10px;
+}
+
+.power-menu-compact .button.hover,
+.power-menu-compact .button:hover {
+    background-color: var(--hover);
+}
+
+.power-menu-compact .button .icon {
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    font-size: 15px;
+    color: var(--muted);
+    padding-right: 10px;
+}
+
+.power-menu-compact .button .label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.power-menu-compact .button.shutdown .icon {
+    color: var(--rose);
+}
+
+.audio-menu QSlider::groove:horizontal {
+    height: 5px;
+    border-radius: 2px;
+    background-color: var(--hover);
+}
+
+.audio-menu QSlider::sub-page:horizontal {
+    background-color: var(--active);
+    border-radius: 2px;
+}
+
+.audio-menu QSlider::handle:horizontal {
+    width: 11px;
+    margin: -3px 0;
+    border-radius: 5px;
+    background-color: var(--text);
+}
+
+.quick-launch-popup .container {
+    background-color: var(--bar);
+    border: 1px solid #62574a;
+    border-radius: 13px;
+}
+
+.quick-launch-popup .search {
+    margin: 9px 9px 4px 9px;
+    padding: 7px 11px;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 9px;
+}
+
+.quick-launch-popup .search .search-input {
+    background: transparent;
+    border: 0;
+    color: var(--text);
+    font-family: "Cascadia Mono", "Consolas";
+    font-size: 15px;
+    padding: 4px 0;
+}
+
+.quick-launch-popup .search .search-icon,
+.quick-launch-popup .search .search-submit-icon {
+    color: var(--active);
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    font-size: 16px;
+}
+
+.quick-launch-popup .search .search-icon {
+    padding-right: 8px;
+}
+
+.quick-launch-popup .search .loader-line {
+    color: var(--active);
+}
+
+.quick-launch-popup .search .prefix {
+    background-color: #403e2b;
+    color: var(--active);
+    border-radius: 5px;
+    padding: 0 6px;
+}
+
+.quick-launch-popup .results {
+    background: transparent;
+    padding: 5px 9px 8px;
+}
+
+.quick-launch-popup .results-list-view {
+    color: var(--text);
+    font-family: "Segoe UI Variable", "Segoe UI";
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.quick-launch-popup .results-list-view::item {
+    padding: 8px 10px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+}
+
+.quick-launch-popup .results-list-view::item:hover {
+    background-color: var(--surface);
+}
+
+.quick-launch-popup .results-list-view::item:selected {
+    background-color: #403e2b;
+    border: 1px solid #756f44;
+}
+
+.quick-launch-popup .results-list-view .description,
+.quick-launch-popup .results-list-view .separator,
+.quick-launch-popup .results-empty-text {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.quick-launch-popup .results-list-view .separator {
+    padding: 5px 10px;
+}

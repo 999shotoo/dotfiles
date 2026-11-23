@@ -1,0 +1,255 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/amnweb/yasb/v2.0.8/schema.json
+watch_config: true
+watch_stylesheet: true
+update_check: true
+
+bars:
+  primary-bar:
+    enabled: true
+    screens: ["primary"]
+    class_name: "yasb-bar"
+    style: "adaptive"
+    alignment:
+      position: "top"
+      align: "center"
+    dimensions:
+      width: "100%"
+      height: 36
+    padding:
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+    animation:
+      enabled: false
+    window_flags:
+      always_on_top: true
+      windows_app_bar: true
+      hide_on_fullscreen: true
+    widgets:
+      left: ["quick_launch", "windows_workspaces", "wallpapers"]
+      center: ["taskbar"]
+      right: ["systray", "notifications", "network_status", "volume", "clock", "power"]
+
+widgets:
+  quick_launch:
+    type: "yasb.quick_launch.QuickLaunchWidget"
+    options:
+      label: "<span>\uE721</span>"
+      search_placeholder: "Search applications"
+      max_results: 9
+      icon_size: 23
+      home_page: false
+      compact_mode: true
+      compact_text: true
+      popup:
+        width: 610
+        height: 420
+        blur: false
+        round_corners: true
+        border_color: "#62574a"
+        dark_mode: true
+      keybindings:
+        - keys: "alt+space"
+          action: "toggle_quick_launch"
+          screen: "active"
+
+  windows_workspaces:
+    type: "yasb.windows_desktops.WorkspaceWidget"
+    options:
+      label_workspace_btn: ""
+      label_workspace_active_btn: ""
+
+  window_switcher:
+    type: "yasb.window_switcher.WindowSwitcherWidget"
+    options:
+      label: "<span>\uE8A7</span>"
+      icon_size: 38
+      max_visible_apps: 5
+      show_title: true
+      preview:
+        enabled: true
+        width: 176
+      popup:
+        blur: false
+        round_corners: true
+        border_color: "#62574a"
+        dark_mode: true
+      keybindings:
+        - keys: "alt+w"
+          action: "toggle_window_switcher"
+          screen: "active"
+
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>\uE7AA</span>"
+      tooltip: true
+      image_path: "__HOME__/Pictures/WallDesk"
+      change_automatically: false
+      engine:
+        enabled: true
+        animation: "split"
+      gallery:
+        type: "strip"
+        orientation: "portrait"
+        image_width: 224
+        image_corner_radius: 12
+        accent_color: "#a8a34b"
+      callbacks:
+        on_left: "toggle_gallery"
+        on_right: "do_nothing"
+      keybindings:
+        - keys: "alt+e"
+          action: "toggle_gallery"
+          screen: "primary"
+
+  taskbar:
+    type: "yasb.taskbar.TaskbarWidget"
+    options:
+      icon_size: 17
+      tooltip: true
+      show_only_visible: false
+      strict_filtering: true
+      hide_empty: true
+      callbacks:
+        on_left: "toggle_window"
+        on_right: "context_menu"
+      animation:
+        enabled: false
+      preview:
+        enabled: true
+        width: 216
+        delay: 350
+        peek: false
+      grouping:
+        enabled: true
+        show_count: false
+
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "\uE70D"
+      label_expanded: "\uE70E"
+      label_position: "left"
+      icon_size: 18
+      show_unpinned: false
+      show_unpinned_button: true
+      show_in_popup: true
+      icons_per_row: 5
+      pin_click_modifier: "ctrl"
+      show_battery: false
+      show_volume: false
+      show_network: false
+      tooltip: true
+      use_hook: true
+      popup:
+        blur: false
+        round_corners: true
+        border_color: "#49423a"
+        alignment: "left"
+        direction: "down"
+        offset_top: 8
+
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>{icon}</span> {count}"
+      label_alt: "<span>{icon}</span>"
+      icons:
+        new: "\uEA8F"
+        default: "\uEA8F"
+        dnd_on: "\uE7ED"
+        dnd_off: "\uEA8F"
+        dismiss: "\uE711"
+      menu:
+        blur: false
+        round_corners: true
+        border_color: "#555047"
+        alignment: "right"
+        direction: "down"
+        offset_top: 8
+        app_icon_size: 16
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "toggle_label"
+        on_right: "toggle_notification"
+
+  network_status:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "network-status"
+      label: "{data[icon]}"
+      label_alt: "{data[summary]}"
+      label_placeholder: "\uE701"
+      tooltip: true
+      tooltip_label: "{data[summary]}"
+      exec_options:
+        run_cmd: 'powershell.exe -NoLogo -NoProfile -NonInteractive -File "__HOME__/.config/yasb/network-status.ps1"'
+        run_interval: 30000
+        return_format: "json"
+        encoding: "utf-8"
+        use_shell: false
+      callbacks:
+        on_left: "exec quick_settings"
+        on_middle: "exec_custom"
+        on_right: "toggle_label"
+
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "<span>{icon}</span> {level}"
+      icons:
+        muted: "\uE74F"
+        "10": "\uE992"
+        "30": "\uE993"
+        "60": "\uE994"
+        "100": "\uE995"
+      audio_menu:
+        blur: false
+        round_corners: true
+        border_color: "#555047"
+        alignment: "right"
+        direction: "down"
+        show_apps: true
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute"
+
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%H:%M}"
+      label_alt: "{%a, %d %b %H:%M}"
+      calendar:
+        blur: false
+        round_corners: true
+        border_color: "#555047"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_calendar"
+        on_middle: "toggle_label"
+
+  power:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uE7E8"
+      menu_style: "popup"
+      uptime: false
+      show_user: false
+      popup:
+        blur: false
+        round_corners: true
+        border_color: "#555047"
+        alignment: "right"
+        direction: "down"
+        offset_top: 8
+      buttons:
+        lock: ["\uE72E", "Lock"]
+        sleep: ["\uE708", "Sleep"]
+        restart: ["\uE72C", "Restart"]
+        shutdown: ["\uE7E8", "Shut down"]
+        cancel: ["\uE711", "Close"]
